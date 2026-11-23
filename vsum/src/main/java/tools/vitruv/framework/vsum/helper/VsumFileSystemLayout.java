@@ -13,13 +13,13 @@ import org.eclipse.emf.common.util.URI;
 
 /** Helper class to manage the file system layout of a Vitruv project with VSUM support. */
 public class VsumFileSystemLayout {
-  private static final String CORRESPONDENCES_FILE = "correspondences.correspondence";
-  private static final String UUIDS_FILE = "uuid.uuid";
-  private static final String MODELS_FILE = "models.models";
-  private static final String VSUM_FOLDER_NAME = "vsum";
-  private static final String CONSISTENCY_METADATA_FOLDER_NAME = "consistencymetadata";
+  public static final String CORRESPONDENCES_FILE = "correspondences.correspondence";
+  public static final String UUIDS_FILE = "uuid.uuid";
+  public static final String MODELS_FILE = "models.models";
+  public static final String VSUM_FOLDER_NAME = "vsum";
+  public static final String CONSISTENCY_METADATA_FOLDER_NAME = "consistencymetadata";
 
-  private final Path vsumProjectFolder;
+  public final Path vsumProjectFolder;
   private boolean prepared = false;
 
   /**
