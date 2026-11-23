@@ -68,6 +68,7 @@ public class VirtualModelImpl implements InternalVirtualModel, ChangePropagation
   }
 
   /** Loads the existing models of the virtual model. */
+  @Override
   public void loadExistingModels() {
     resourceRepository.loadExistingModels();
   }

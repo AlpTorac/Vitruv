@@ -41,6 +41,7 @@
     <module>testutils</module>
     <module>applications</module>
     <module>p2wrappers</module>
+    <module>oinfo</module>
   </modules>
 
   <properties>

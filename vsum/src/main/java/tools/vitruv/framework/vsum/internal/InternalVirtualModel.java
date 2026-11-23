@@ -26,4 +26,7 @@ public interface InternalVirtualModel extends VirtualModel, ChangeableViewSource
 
   /** Disposes of the virtual model, releasing any resources held. */
   void dispose();
+
+  /** Loads the existing models of the virtual model. */
+  public void loadExistingModels();
 }

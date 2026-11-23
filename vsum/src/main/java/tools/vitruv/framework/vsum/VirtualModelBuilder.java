@@ -12,6 +12,7 @@ import tools.vitruv.change.interaction.InteractionResultProvider;
 import tools.vitruv.change.interaction.InternalUserInteractor;
 import tools.vitruv.change.interaction.UserInteractionFactory;
 import tools.vitruv.change.propagation.ChangePropagationSpecification;
+import tools.vitruv.change.propagation.ChangePropagationSpecificationProvider;
 import tools.vitruv.change.propagation.ChangePropagationSpecificationRepository;
 import tools.vitruv.change.utils.ProjectMarker;
 import tools.vitruv.framework.views.ViewType;
@@ -190,9 +191,7 @@ public class VirtualModelBuilder {
     VsumFileSystemLayout fileSystemLayout = new VsumFileSystemLayout(storageFolder);
     fileSystemLayout.prepare();
 
-    VirtualModelImpl vsum =
-        new VirtualModelImpl(
-            fileSystemLayout, userInteractor, viewTypeRepository, changeSpecificationRepository);
+    InternalVirtualModel vsum = createVirtualModelInstance(fileSystemLayout, userInteractor, viewTypeRepository, changeSpecificationRepository);
     vsum.loadExistingModels();
 
     try {
@@ -202,5 +201,13 @@ public class VirtualModelBuilder {
     }
 
     return vsum;
+  }
+
+  protected InternalVirtualModel createVirtualModelInstance(VsumFileSystemLayout fileSystemLayout,
+      InternalUserInteractor userInteractor,
+      ViewTypeRepository viewTypeRepository,
+      ChangePropagationSpecificationProvider changePropagationSpecificationProvider) {
+    return new VirtualModelImpl(
+            fileSystemLayout, userInteractor, viewTypeRepository, changePropagationSpecificationProvider);
   }
 }
